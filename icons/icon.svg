@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C3E50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495E;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="256" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative Circles -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#ECF0F1" stroke-width="2" stroke-opacity="0.1"/>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#ECF0F1" stroke-width="2" stroke-opacity="0.1"/>
+  
+  <!-- Heart Shape with Gradient -->
+  <defs>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E74C3C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C0392B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M256 384c-8.5 0-16.6-3.3-22.6-9.4C227.4 368.6 128 269.2 128 192c0-35.3 28.7-64 64-64 17.7 0 34.1 7.2 45.9 19.1C250.7 135.2 267.1 128 284.8 128c35.3 0 64 28.7 64 64 0 77.2-99.4 176.6-105.4 182.6-6 6.1-14.1 9.4-22.6 9.4z" 
+        fill="url(#heartGradient)"/>
+  
+  <!-- Voice Waves with Animation -->
+  <g transform="translate(256, 256)">
+    <path d="M0 0c-8.8 0-16 7.2-16 16v160c0 8.8 7.2 16 16 16s16-7.2 16-16V16c0-8.8-7.2-16-16-16z" 
+          fill="#3498DB" opacity="0.8"/>
+    <path d="M-64 32c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V48c0-8.8-7.2-16-16-16z" 
+          fill="#3498DB" opacity="0.6"/>
+    <path d="M64 32c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V48c0-8.8-7.2-16-16-16z" 
+          fill="#3498DB" opacity="0.6"/>
+  </g>
+  
+  <!-- Shine Effect -->
+  <circle cx="180" cy="180" r="40" fill="#FFFFFF" opacity="0.1"/>
+</svg> 

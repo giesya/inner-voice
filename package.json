@@ -1,0 +1,11 @@
+{
+  "name": "inner-voice",
+  "version": "1.0.0",
+  "description": "Inner Voice - Aplikasi untuk berbagi cerita dan pengalaman",
+  "scripts": {
+    "generate-icons": "node scripts/generate-icons.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.2"
+  }
+}

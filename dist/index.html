@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Inner Voice: Share Your Story!</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script type="module" crossorigin src="/assets/index-DZUxH2X9.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DQCzdiy1.css">
+</head>
+<body>
+    <!-- Skip to content button -->
+    <div class="skip-link-hotspot">
+      <a href="#/" class="skip-link" id="skip-to-content" accesskey="k">Langsung ke konten utama (Alt+K)</a>
+    </div>
+
+    <header>
+        <h1><i class="fa-solid fa-heart-circle-bolt"></i> Inner Voice: Share Your Story!</h1>
+        <nav>
+            <a href="#/" aria-label="Beranda"><i class="fas fa-home"></i> Beranda</a>
+            <a href="#/add" aria-label="Tambah Cerita"><i class="fas fa-plus-circle"></i> Tambah</a>
+            <a href="#/login" id="loginMenu" aria-label="Login atau Daftar"><i class="fas fa-user"></i> <span>Login</span></a>
+        </nav>
+    </header>
+
+    <main id="maincontent" tabindex="-1">
+        <!-- Content will be dynamically inserted here -->
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 by Gisa Kayla Syahla - FC012D5X1271</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        // Shortcut keyboard Alt+K = langsung ke Beranda
+        document.addEventListener('keydown', (event) => {
+            if (event.altKey && event.key.toLowerCase() === 'k') {
+                window.location.hash = '#/';
+                setTimeout(() => {
+                    document.getElementById('maincontent').focus();
+                }, 100);
+            }
+        });
+
+        // Saat klik tombol Skip
+        document.getElementById('skip-to-content').addEventListener('click', (e) => {
+            window.location.hash = '#/';
+            setTimeout(() => {
+                document.getElementById('maincontent').focus();
+            }, 100);
+        });
+    </script>
+</body>
+</html>

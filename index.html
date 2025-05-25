@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Inner Voice - Aplikasi untuk berbagi cerita dan pengalaman">
+    <meta name="theme-color" content="#2C3E50" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Inner Voice">
+    
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    
+    <title>Inner Voice: Share Your Story!</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+    <!-- Skip to content button -->
+    <div class="skip-link-hotspot">
+      <a href="#/" class="skip-link" id="skip-to-content" accesskey="k">Langsung ke konten utama (Alt+K)</a>
+    </div>
+
+    <header>
+        <h1><i class="fa-solid fa-heart-circle-bolt"></i> Inner Voice: Share Your Story!</h1>
+        <nav>
+            <a href="#/" aria-label="Beranda"><i class="fas fa-home"></i> Beranda</a>
+            <a href="#/add" aria-label="Tambah Cerita"><i class="fas fa-plus-circle"></i> Tambah</a>
+            <a href="#/login" id="loginMenu" aria-label="Login atau Daftar"><i class="fas fa-user"></i> <span>Login</span></a>
+        </nav>
+    </header>
+
+    <main id="maincontent" tabindex="-1">
+        <!-- Content will be dynamically inserted here -->
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 by Gisa Kayla Syahla - FC012D5X1271</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module">
+        import { initApp } from './src/js/app.js';
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Register service worker
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(error => {
+                        console.error('ServiceWorker registration failed:', error);
+                    });
+            }
+            
+            initApp();
+        });
+    </script>
+
+    <script>
+        // Shortcut keyboard Alt+K = langsung ke Beranda
+        document.addEventListener('keydown', (event) => {
+            if (event.altKey && event.key.toLowerCase() === 'k') {
+                window.location.hash = '#/';
+                setTimeout(() => {
+                    document.getElementById('maincontent').focus();
+                }, 100);
+            }
+        });
+
+        // Saat klik tombol Skip
+        document.getElementById('skip-to-content').addEventListener('click', (e) => {
+            window.location.hash = '#/';
+            setTimeout(() => {
+                document.getElementById('maincontent').focus();
+            }, 100);
+        });
+    </script>
+</body>
+</html>

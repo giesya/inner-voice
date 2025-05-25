@@ -1,0 +1,39 @@
+Nama: Gisa Kayla Syahla
+ID: FC012D5X1271
+
+Map Service API Keys:
+- OpenStreetMap: No API key required (free to use)
+- MapTiler: No API key required (using free tile layer)
+- Esri World Imagery: No API key required (using free tile layer)
+
+API yang digunakan: https://story-api.dicoding.dev/v1
+Fitur: Menampilkan daftar cerita (story) dari API, setiap item memuat:
+- Gambar (story.photoUrl)
+- Nama (story.name)
+- Deskripsi (story.description)
+- Tanggal (story.createdAt)
+
+Peta digital:
+- Menggunakan: Leaflet.js
+- Layer peta yang digunakan:
+  1. Default: OpenStreetMap (https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png)
+  2. Satellite: Esri Satellite (https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x})
+  3. Terrain: OpenTopoMap (https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png)
+- Marker ditambahkan berdasarkan koordinat (story.lat, story.lon)
+- Popup marker menampilkan:
+  - Gambar cerita
+  - Nama pengguna
+  - Deskripsi cerita
+  - Tombol untuk melihat detail
+- Layer control untuk beralih antar jenis peta
+- Tidak membutuhkan API Key (karena memakai layanan peta gratis)
+
+Catatan: Aplikasi ini menampilkan semua data sesuai ketentuan dan tidak memerlukan API Key tambahan untuk map service.
+
+MAP_API_KEYS:
+- OpenStreetMap: No API key required
+- Esri Satellite: No API key required
+- OpenTopoMap: No API key required
+
+Note: The application uses free and open-source map tile providers that don't require API keys. This makes the application more accessible and easier to deploy.
+
